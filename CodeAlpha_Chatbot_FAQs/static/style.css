@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.app-container {
+    width: 420px;
+}
+
+.chat-header {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 70px;
+}
+
+.chat-header h1 {
+    font-family: 'Poppins', sans-serif;  /* 👈 new font */
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.chat-header p {
+    margin-top: 0;
+    font-size: 15px;
+    color: #555;
+}
+
+#chatContainer {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 18px;
+    width: 420px;          /* fixed width */
+    height: 420px;         /* fixed height */
+    box-sizing: border-box;
+    overflow: hidden;      /* prevent container expansion */
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    flex: 1;               /* fills available space */
+    overflow-y: auto;      /* scroll when content is long */
+    padding: 10px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+/* Chat bubbles */
+.user-message {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 8px 0;
+    max-width: 75%;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #e4e6eb;
+    color: #000;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin: 8px 0;
+    max-width: 75%;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: pre-wrap;
+    margin-left: 30px;          /* 👈 shift to right */
+}
+
+
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 22px;        /* 👈 margin between input and button */
+    margin-top: 15px;
+    flex-shrink: 0;
+}
+
+
+input[type="text"] {
+    width: 100%;              /* 👈 fills available space */
+    height: 40px;             /* 👈 same as button */
+    padding: 0 14px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+button {
+    height: 38px;               /* 👈 same height as input */
+    padding: 0 18px;
+    border: none;
+    border-radius: 20px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    line-height: 38px;
+}
+
+
+button:hover {
+    background: #0056b3;
+}
+
+
+#typing {
+    font-style: italic;
+    opacity: 0.7;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python FAQ Chatbot</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="chat-header">
+  <h1>Python FAQ Chatbot</h1>
+  <p>Your friendly assistant for Python basics </p>
+</div>
+
+<div id="chatContainer">
+    <div id="messages">
+        <p>👋 Hi! I’m a Python FAQ assistant. How can I help you?</p>
+    </div>
+    <!-- 👇 Wrap input + button together -->
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ask anything about Python (functions, loops, lists...)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
