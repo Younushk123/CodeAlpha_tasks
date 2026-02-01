@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Language Translation Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+  <h2>🌍 Language Translation Tool</h2>
+
+  <form method="POST">
+    <div class="row">
+      <!-- INPUT COLUMN -->
+      <div class="column">
+        <label>Input Text</label>
+        <textarea id="text" name="text" placeholder="Enter text here...">{{ input_text }}</textarea>
+
+        <div class="dropdowns">
+          <select name="src">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="ar">Arabic</option>
+            <option value="ur">Urdu</option>
+          </select>
+
+          <select id="tgt" name="tgt">
+            <option value="fr">French</option>
+            <option value="ar">Arabic</option>
+            <option value="en">English</option>
+            <option value="ur">Urdu</option>
+          </select>
+        </div>
+
+        <button type="submit" class="purple">Translate</button>
+      </div>
+
+      <!-- OUTPUT COLUMN -->
+      <div class="column">
+        <label>Translated Text</label>
+        <div id="outputText">
+          {% if translated_text %}
+            {{ translated_text }}
+          {% else %}
+            Translation will appear here...
+          {% endif %}
+        </div>
+
+        <div class="actions">
+          <button type="button" class="blue" onclick="copyText()">📋 Copy</button>
+          <button type="button" class="green" onclick="speakText()">🔊 Speak</button>
+        </div>
+
+        <!-- Audio player for playback -->
+          <audio id="audioPlayer" controls hidden></audio>
+      </div>
+    </div>
+  </form>
+
+  <footer>
+    Simple Language Translator • Flask + pyttsx3
+  </footer>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
